@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "mini-html-parser2": "^0.2.0"
+  }
+}

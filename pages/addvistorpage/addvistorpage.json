@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+  },
+  "defaultTitle": "添加出行人",
+  "titleBarColor": "#fff"
+}

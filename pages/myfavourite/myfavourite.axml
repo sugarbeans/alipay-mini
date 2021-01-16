@@ -1,0 +1,80 @@
+<view class="container">
+  <view class="tab-bar">
+    <typetabbar onSwitchType="switchType" active="{{active}}"></typetabbar>
+  </view>
+  <view class="swiper-box">
+    <swiper
+      style="height:{{clientHeight+'px'}}"
+      current="{{current}}"
+      circular="true"
+      onChange="changeCurrent"
+    >
+      <!-- 景区 -->
+      <swiper-item class="swiper-item">
+        <view
+          class="product-info-box"
+          a:for="{{productList}}"
+          a:for-index="index"
+          a:key="index"
+          data-id="{{item.encryptId}}"
+          onTap="toProductInfo"
+        >
+          <image
+            class="product-img"
+            src="{{item.imageList[0].url}}"
+            onError="bindErrorImg"
+            data-errorimg="{{index}}"
+          ></image>
+          <view class="product">
+            <view class="product-title">{{item.name}}</view>
+            <view class="product-introduce">{{item.description}}</view>
+            <view class="product-price">
+              <text>￥</text>
+              <text>{{item.minPrice}}</text>
+              <text>起</text>
+              <iconfont
+                class="wjx"
+                a:if="{{!item.alreadFollow}}"
+                name="wujiaoxingxingxing"
+                size="{{28}}"
+              ></iconfont>
+              <iconfont
+                class="wjx"
+                data-item="{{item}}"
+                catchTap="cancelCollectOne"
+                a:else
+                name="wjx_dark"
+                size="{{28}}"
+              ></iconfont>
+            </view>
+          </view>
+          <view class="product-theme">
+            <text
+              class=""
+              a:for-index="tempIndex"
+              a:for="{{item.themes}}"
+              a:for-item="temp"
+              a:key="tempIndex"
+            >{{temp}}</text>
+          </view>
+        </view>
+      </swiper-item>
+      <!-- 酒店 -->
+      <swiper-item class="swiper-item">
+        <view></view>
+      </swiper-item>
+      <!-- 特产 -->
+      <swiper-item class="swiper-item">
+        <view></view>
+      </swiper-item>
+      <!-- 线路 -->
+      <swiper-item class="swiper-item">
+        <view></view>
+      </swiper-item>
+      <!-- 场馆 -->
+      <swiper-item class="swiper-item">
+        <view></view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

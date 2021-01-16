@@ -1,0 +1,119 @@
+<view>
+  <view a:if="{{showPayLoading}}">
+    <loading loadingText="{{loadingText}}"></loading>
+  </view>
+  <view class="order-bar">
+    <view
+      class="order-item {{active==='0'?'active':''}}"
+      data-id="0"
+      onTap="changeOrderList"
+    >全部订单</view>
+    <view
+      class="order-item {{active==='00'?'active':''}}"
+      data-id="00"
+      onTap="changeOrderList"
+    >未付款</view>
+    <view
+      class="order-item {{active==='02'?'active':''}}"
+      data-id="02"
+      onTap="changeOrderList"
+    >已支付</view>
+    <view
+      class="order-item {{active==='27'?'active':''}}"
+      data-id="27"
+      onTap="changeOrderList"
+    >已退订</view>
+    <view
+      class="order-item {{active==='11'?'active':''}}"
+      data-id="11"
+      onTap="changeOrderList"
+    >已检票</view>
+  </view>
+  <view class="order-info" style="height:{{clientHeight+'px'}};margin-top: 60px; padding-top: 10px;">
+    <view class="islogin" a:if="{{!isLogin}}">未登录，请登录</view>
+    <view
+      class="order-box"
+      a:if="{{isLogin}}"
+      data-id="{{item.orid}}"
+      catchTap="toOrderDetail"
+      a:for="{{orderList}}"
+      a:for-index="index"
+      a:key="index"
+    >
+      <view class="order-title">
+        <view class="order-code">{{item.orid}}</view>
+        <view class="order-status" style="color:{{item.status==6?colorType[1]:colorType[0]}}">
+          {{item.ddzt}}
+        </view>
+      </view>
+      <view class="order-main">
+        <view class="order-main-l">
+          <view class="order-name">{{item.scenicorders[0].scenicname}}</view>
+          <view class="order-date">
+            <text class="iconfont icon-quan"></text>
+            <text class="date"> 游玩日期：{{item.scenicorders[0].playtime}}</text>
+          </view>
+          <view class="order-num">
+            <text class="iconfont icon-quan"></text>
+            <text class="date"> {{item.scenicorders[0].ornm}}/{{item.scenicorders[0].orph}}</text>
+          </view>
+        </view>
+        <view class="order-price">
+          <text>￥</text>
+          <text>{{item.mont}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <dialog title="核销码" show="{{showDialog}}" onButtontap="tapDialogButton" buttons="{{textButton}}">
+    <swiper class="swiper">
+      <block
+        a:for="{{voucherpics}}"
+        a:for-index="index"
+        a:key="index"
+      >
+        <swiper-item class="swiper-box-item">
+          <image src="{{item.url}}"/>
+          <view class="qrcode-name">{{item.info}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </dialog>
+  <dialog
+    title="申请退订"
+    show="{{showRefundDialog}}"
+    onButtontap="RefundDialogButton"
+    buttons="{{refundButton}}"
+  >
+    <view a:if="{{orderInfoView.orderPassengerList.length==0}}" class="change-out-box">
+      <view class="change-title">请选择数量：</view>
+      <view class="change-box">
+        <text onTap="minusIndex" class="iconfont icon-jian"></text>
+        <text>{{surplusQuantity}}</text>
+        <text onTap="addIndex" class="iconfont icon-jia"></text>
+      </view>
+    </view>
+    <view a:else class="vister-out-box">
+      <checkbox-group onChange="checkboxChange">
+        <label
+          class="checkbox"
+          a:for="{{orderInfoView.orderPassengerList}}"
+          a:for-index="index"
+          a:key="index"
+          a:if="{{item.status==4}}"
+        >
+          <checkbox
+            data-id="{{item.id}}"
+            value="{{item.id}}"
+            checked="{{item.checked}}"
+          />
+          <view class="vister-box">
+            <text class="vister-item">姓名：{{item.person.name}}</text>
+            <text class="vister-item">证件号：{{item.person.credentials}}</text>
+          </view>
+        </label>
+      </checkbox-group>
+    </view>
+  </dialog>
+</view>

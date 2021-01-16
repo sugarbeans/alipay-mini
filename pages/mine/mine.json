@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "iconfont": "/iconfont/iconfont"
+  },
+  "defaultTitle": "我的"
+}

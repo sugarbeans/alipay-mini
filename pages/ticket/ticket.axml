@@ -1,0 +1,41 @@
+<view class="container">
+<view class="search-box">
+    <view class="search">
+      <view class="search-text">
+        <text class="iconfont icon-icon-search"></text>
+        <input
+          class="search-input"
+          placeholder="输入关键字查询"
+          value="{{search}}"
+          onConfirm="doneSearch"
+        />
+      </view>
+    </view>
+  </view>
+  <view class="product-box">
+    <view
+      class="product-info-box"
+      a:for="{{productList}}"
+      a:for-index="index"
+      a:key="index"
+      data-id="{{item.providerId}}"
+      onTap="toProductInfo"
+    >
+      <image
+        class="product-img"
+        src="{{item.pictureUrl}}"
+      ></image>
+      <view class="product">
+        <view class="product-title">{{item.providerName}}</view>
+        <view class="product-introduce">
+          <text class="wjx">{{item.szgradename}}</text>
+        </view>
+        <view class="product-introduce"><text class="iconfont icon-icon010" style="color: #d81e06"></text>：{{item.szaddress}}</view>
+        <view class="product-introduce"><text class="iconfont icon-huaban" style="color: #f4ea2a;"></text>：{{item.szphone}}</view>
+      </view>
+      <view class="product-theme">
+        <view class="product-introduce"><text class="iconfont icon-yingyeshijian" style="color: #f4ea2a;"></text>：{{item.businesshours}}</view>
+      </view>
+    </view>
+  </view>
+</view>

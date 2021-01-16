@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="no-common-vistor" a:if="{{commonVistorList.length==0}}">暂无数据</view>
+  <view class="vistor-box" a:else>
+    <view
+      class="vistor-list-item"
+      a:for="{{commonVistorList}}"
+      a:for-index="index"
+      a:key="{{index}}"
+      a:for-item="item"
+    >
+      <view class="vistor-list-item-l">
+        <view class="vistor-name">
+          <text class="vistor-name-c">{{item.name}}</text>
+        </view>
+        <view class="vistor-name">
+          <text class="vistor-type">手  机  号：</text>
+          <text class="vistor-c">{{item.phone}}</text>
+        </view>
+        <view class="vistor-name">
+          <text class="vistor-type">身份证号：</text>
+          <text class="vistor-c">{{item.code}}</text>
+        </view>
+      </view>
+      <view
+        class="edit-box"
+        data-obj="{{item}}"
+        onTap="changeVistorInfo"
+      >
+        <view class="iconfont icon-bianji1"></view>
+        <view class="edit-text">编辑</view>
+      </view>
+    </view>
+  </view>
+  <view class="add-vistor-btn" onTap="addCommomVistor">添加常用出行人</view>
+</view>

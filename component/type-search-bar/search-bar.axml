@@ -1,0 +1,56 @@
+<view class="container">
+  <view class="search-title">
+    <view class="search-k " bindtap="showFn" data-id="1">
+      <text class="{{active=='1'?'active':''}}">{{firstName}}</text>
+      <text class="iconfont icon-xsj {{active=='1'?'active':''}}"></text>
+    </view>
+    <view class="search-k" bindtap="showFn" data-id="2">
+      <text class="{{active=='2'?'active':''}}">{{secondName}}</text>
+      <text class="iconfont icon-xsj {{active=='2'?'active':''}}"></text>
+    </view>
+    <view class="search-k" bindtap="showFn" data-id="3">
+      <text class="{{active=='3'?'active':''}}">{{thirdName}}</text>
+      <text class="iconfont icon-xsj {{active=='3'?'active':''}}"></text>
+    </view>
+  </view>
+  <!-- 第一删选 -->
+  <block class="" wx:if="{{showFirst}}">
+    <view class="search-box theme-box ">
+      <mp-cells class="searchbar-result {{firstList.length>0?'a':''}}  {{extClass}}">
+        <mp-cell class="search-result" wx:for="{{firstList}}" wx:for-index="firstIndex" wx:key="{{firstIndex}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="choseFirst">
+          <view class="cell-box ">
+            <view class="iconfont icon-common {{firstNum==firstIndex?'icon-gou cell-active':''}}"></view>
+            <view class="cell-text {{firstNum==firstIndex?'cell-active':''}}" >{{item.name}}</view>
+          </view>
+        </mp-cell>
+      </mp-cells>
+    </view>
+  </block>
+  <!-- 第二删选 -->
+  <block class="" wx:if="{{showSecond}}">
+    <view class="search-box theme-box" >
+      <mp-cells class="searchbar-result  {{extClass}}">
+        <mp-cell class="search-result" wx:for="{{secondList}}" wx:for-index="secondIndex" wx:key="{{secondIndex}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="choseSecond">
+          <view class="cell-box ">
+            <view class="iconfont icon-common {{secondNum==secondIndex?'icon-gou cell-active':''}}"></view>
+            <view class="cell-text {{secondNum==secondIndex?'cell-active':''}}" >{{item.name}}</view>
+          </view>
+        </mp-cell>
+      </mp-cells>
+    </view>
+  </block>
+  <!-- 第三删选 -->
+  <block class="" wx:if="{{showThird}}">
+    <view class="search-box theme-box" >
+      <mp-cells class="searchbar-result  {{extClass}}">
+        <mp-cell class="search-result" wx:for="{{thirdList}}" wx:for-index="thirdIndex" wx:key="{{thirdIndex}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="choseThird">
+          <view class="cell-box ">
+            <view class="iconfont icon-common {{thirdNum==thirdIndex?'icon-gou cell-active':''}}"></view>
+            <view class="cell-text {{thirdNum==thirdIndex?'cell-active':''}}" >{{item.name}}</view>
+          </view>
+        </mp-cell>
+      </mp-cells>
+    </view>
+  </block>
+  <slot></slot>
+</view>

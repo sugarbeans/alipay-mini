@@ -1,0 +1,6 @@
+@import './assets/style/weui.acss';
+@import './assets/style/iconfont.acss';
+
+page{  
+  background-color: #f6f9fb;
+}

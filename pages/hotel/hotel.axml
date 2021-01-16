@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="search-box">
+    <view class="search" onTap="toSearch">
+      <view class="search-text">
+        <text class="iconfont icon-sousuo"></text>
+        <text class="search-text-item">目的地/酒店/景点/关键字</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="search-bar">
+    <search-bar 
+      firstName="{{firstName}}"
+      secondName="{{secondName}}"
+      thirdName="{{thirdName}}"
+      bind:choseFirst="choseFirst" 
+      bind:choseSecond="choseSecond" 
+      bind:choseThird="choseThird"></search-bar>
+  </view> -->
+  <view class="product-box">
+    <view
+      class="product-info"
+      a:for="{{hotelList}}"
+      a:for-index="index"
+      a:key="{{index}}"
+      onTap="toProductInfo"
+    >
+      <image class="product-image" src="../../assets/banner/001.png"/>
+      <view class="product">
+        <view class="product-title">橘子酒店</view>
+        <view class="product-introduce">酒店距离机场14公里，位于故宫天 安门2公里</view>
+        <view class="product-price">
+          <text>￥</text>
+          <text>98</text>
+          <text>起</text>
+        </view>
+        <view class="product-theme">
+          <text>实惠</text>
+          <text>商务出行</text>
+          <text>spa休闲</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

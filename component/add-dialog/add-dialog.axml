@@ -1,0 +1,45 @@
+<view class="container">
+  <view onTap="closeMaskDialog" class="mask-box"></view>
+  <view class="add-vistor-box">
+    <view class="add-btn-box">
+      <view class="add-btn" onTap="toAddVistor">
+        <view class="btn">+新增出行人</view>
+      </view>
+    </view>
+    <view class="vistor-list">
+      <view
+        class="vistor-list-item"
+        a:for="{{commonVistorList}}"
+        a:for-index="index"
+        a:key="index"
+        a:for-item="item"
+        data-obj="{{item}}"
+        onTap="chooseCommonVistor"
+      >
+        <view class="vistor-list-item-l">
+          <view class="vistor-name">
+            <text class="vistor-name-c">{{item.name}}</text>
+          </view>
+          <view class="vistor-name">
+            <text class="vistor-type">手  机  号：</text>
+            <text class="vistor-c">{{item.phone}}</text>
+          </view>
+          <view class="vistor-name">
+            <text class="vistor-type">身份证号：</text>
+            <text class="vistor-c">{{item.code}}</text>
+          </view>
+        </view>
+        <view
+          class="edit-box"
+          data-obj="{{item}}"
+          catchTap="changeVistorInfo"
+        >
+          <view class="iconfont icon-bianji1"></view>
+          <view class="edit-text">编辑</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="iconfont icon-chahao" onTap="closeMaskDialog"></view>
+  <slot name="footer"></slot>
+</view>

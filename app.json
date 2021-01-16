@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/ticket/ticket",
+    "pages/ticket-info/ticket-info",
+    "pages/loginPage/loginPage",
+    "pages/mine/mine",
+    "pages/bookproduct/bookproduct",
+    "pages/addvistorpage/addvistorpage",
+    "pages/order/order",
+    "pages/orderdetail/orderdetail",
+    "pages/changguan/changguan",
+    "pages/techan/techan",
+    "pages/xianlu/xianlu",
+    "pages/map/map"
+  ],
+  "window": {
+    "defaultTitle": "鼎游通"
+  },
+  "tabBar": {
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "icon": "assets/img/homedark.png",
+        "activeIcon": "assets/img/homelight.png",
+        "name": "首页"
+      },
+      {
+        "pagePath": "pages/ticket/ticket",
+        "icon": "assets/img/ticketdark.png",
+        "activeIcon": "assets/img/ticketlight.png",
+        "name": "景点"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "icon": "assets/img/orderdark.png",
+        "activeIcon": "assets/img/orderlight.png",
+        "name": "订单"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "icon": "assets/img/minedark.png",
+        "activeIcon": "assets/img/minelight.png",
+        "name": "我的"
+      }
+    ],
+    "selectedColor":"#35c0ff"
+  }
+}

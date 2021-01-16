@@ -1,0 +1,58 @@
+@import '../../assets/style/iconfont.acss';
+.container{
+  background-color: #ffffff;
+  z-index: 1000;
+}
+.date-box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.week-box{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.week-item{
+  width: 14.28%;
+  text-align: center;
+}
+.calender-box{
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+}
+.one-day{
+  width: 14.28%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #cccccc;
+  box-sizing: border-box;
+  border-bottom: 1px solid #cccccc;
+}
+.one-day:nth-child(7n){
+  border-right: 0;
+}
+.date-active{
+  background-color: #e1f6ff;
+  color: #35c0ff;
+}
+.one-day-date{
+  font-size: 16px;
+  color: black;
+}
+.one-day-price{
+  font-size: 14px;
+  color: #35c0ff;
+}
+.date-item{
+  text-align: center;
+}

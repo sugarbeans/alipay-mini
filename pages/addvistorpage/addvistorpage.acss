@@ -1,0 +1,75 @@
+@import '../../assets/style/iconfont.acss';
+page{
+  background-color: #ffffff;
+}
+.container{
+  padding: 3%;
+}
+.name-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.name{
+  width: 25%;
+  text-align: center;
+}
+.iconfont {
+  margin-right: 5px;
+}
+.name-type{
+  position: absolute;
+  left: 0;
+  top: 55px;
+  width: 100%;
+  z-index: 9999;
+  background-color: #ffffff;
+}
+.all-name-type-item{
+  height: 40px;
+  line-height: 40px;
+  padding: 0 30px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f9f9f9;
+}
+.name-input{
+  flex: 1;
+  background-color: #f9f9f9;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.finish-btn{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn{
+  width: 70%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #35c0ff;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+}
+.switch-box{
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.switch-text{
+  font-size: 14px;
+}
+.wx-switch-input{width:42px !important;height:20px !important;}
+.wx-switch-input::before{width:41px !important;height: 20px !important;}
+.wx-switch-input::after{width: 18px !important;height: 18px !important;}

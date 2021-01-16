@@ -1,0 +1,48 @@
+<view class="container">
+  <!-- 日期 -->
+  <view class="date-box">
+    <text onTap="preDate" class="iconfont icon-jiantou"></text>
+    <view>{{nowDate}}</view>
+    <text onTap="nextDate" class="iconfont icon-jiantou1"></text>
+  </view>
+  <!-- 星期 -->
+  <view class="week-box">
+    <view
+      class="week-item"
+      a:for="{{week}}"
+      a:for-index="index"
+      a:key="{{index}}"
+      a:for-item="item"
+    >{{item}}</view>
+  </view>
+  <!-- 单独每一天 -->
+  <view class="calender-box">
+    <view
+      class="one-day {{dateActive == i?'date-active':''}}"
+      a:for="{{flagDay+flagNum}}"
+      a:for-index="i"
+      a:key="{{i}}"
+    >
+      <block
+        a:for="{{flagDay}}"
+        a:for-index="j"
+        a:key="j"
+        a:if="{{i-flagNum==j}}"
+      >
+        <view
+          class="date-item"
+          a:for="{{priceList}}"
+          a:if="{{temp.day==j+1 && temp.month==month}}"
+          a:for-index="index"
+          a:key="time"
+          a:for-item="temp"
+          onTap="choseDate"
+          data-id="{{i}}"
+          data-priceObj="{{temp}}"
+        >
+          <view class="one-day-date">{{j+1}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

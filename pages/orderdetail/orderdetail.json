@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "dialog": "../../component/dialog/dialog",
+    "loading": "../../component/loading/loading"
+  },
+  "defaultTitle": "订单详情",
+  "titleBarColor": "#fff"
+}

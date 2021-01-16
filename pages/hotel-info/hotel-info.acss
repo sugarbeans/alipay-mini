@@ -1,0 +1,203 @@
+.container{
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+}
+.scroll-top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #c7c7c7;
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  z-index: 999;
+  background-color: rgb(225, 225, 225, 0.2);
+  color: #35c0ff;
+}
+.title-img{
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+}
+.title-img>image{
+  width: 100%;
+}
+.title-body{
+  width: 100%;
+  padding: 2%;
+  box-sizing: border-box;
+}
+.ticket-item{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+  padding: 20px 0;
+}
+.ticket{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ticket>image{
+  width: 40%;
+  height: 100px;
+}
+.ticket-operat{
+  width: 25%;
+}
+.ticket-name{
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: bold;
+}
+.sea-info{
+  font-size: 16px;
+  color: #c7c7c7;
+}
+.ticket-operat{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ticket-price{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ticket-price>text:nth-child(1){
+  font-size: 16px;
+  color: red;
+}
+.ticket-price>text:nth-child(2){
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  margin: 0 5px;
+}
+.ticket-price>text:nth-child(3){
+  font-size: 16px;
+  color: #666666;
+}
+.ticket-btn{
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #35c0ff;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 20px;
+  color: #ffffff;
+}
+.more-item{
+  text-align: center;
+  color: #c7c7c7;
+  margin-top: 20px;
+}
+.scenic-title{
+  font-size: 20px;
+  padding-left: 10px;
+  font-weight: bold;
+  border-left: 6px solid #35c0ff;
+}
+.introduce-text{
+  padding: 0 2%;
+  margin-top: 20px;
+  box-sizing: border-box;
+  color: #636363;
+  margin-bottom: 40px;
+}
+.place-box{
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0 2%;
+  box-sizing: border-box;
+}
+.place-box>image{
+  width: 100%;
+}
+.distance-box{
+  margin-bottom: 30px;
+}
+.distance{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2%;
+  padding-bottom: 20px;
+  height: 50px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #666666;
+}
+.distance:last-child{
+  border-bottom:0;
+}
+.distance-name{
+  flex: 1;
+}
+.distance-name>text{
+  line-height: 30px;
+}
+.distance-num{
+  width: 30%;
+  height: 100%;
+  text-align: center;
+}
+.now-ticket-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 20px;
+}
+.now-ticket-l{
+  width: 70%;
+}
+.now-ticket-r{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.now-ticket-name{
+  font-size: 20px;
+  font-weight: bold;
+}
+.now-ticket-introduce{
+  font-size: 16px;
+}
+.change-box{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+}
+.change-box>text{
+  display: inline-block;
+  width: 33.33333%;
+}
+.change-box>text:nth-child(1){
+  height: 30px;
+  border: 1px solid #dcdcdc;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 30px;
+}
+.change-box>text:nth-child(3){
+  height: 30px;
+  border: 1px solid #dcdcdc;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 30px;
+}
+.change-box>text:nth-child(2){
+  text-align: center;
+  line-height: 30px;
+}

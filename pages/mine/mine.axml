@@ -1,0 +1,79 @@
+<view class="mine-content">
+  <view class="header">
+    <image class="header-bg" src="../../assets/login/loginbg.png"></image>
+  </view>
+  <view class="header-info">
+    <view class="header-l">
+      <image class="header-img" src="{{userImg}}"></image>
+    </view>
+    <view
+      class="header-r"
+      a:if="{{!isLogin}}"
+      catchTap="toGetLogin"
+    >登录</view>
+    <view class="header-r" a:else>{{nickName}}</view>
+  </view>
+  <view class="main-box">
+    <view class="my-order-box">
+      <view class="my-order-title">我的订单</view>
+      <view class="my-order">
+        <view
+          class="all-order order-a"
+          data-id="0"
+          onTap="toOrder"
+        >
+          <iconfont name="qrcode" size="{{30}}"></iconfont>
+          <text class="text">全部订单</text>
+        </view>
+        <view
+          class="wei-order order-a"
+          data-id="00"
+          onTap="toOrder"
+        >
+          <iconfont name="Group" size="{{30}}"></iconfont>
+          <text class="text">未付款</text>
+        </view>
+        <view
+          class="yi-order order-a"
+          data-id="02"
+          onTap="toOrder"
+        >
+          <iconfont name="yiwancheng" size="{{30}}"></iconfont>
+          <text class="text">已支付</text>
+        </view>
+        <view
+          class="finish-order order-a"
+          data-id="11"
+          onTap="toOrder"
+        >
+          <iconfont name="yiwancheng_new" size="{{30}}"></iconfont>
+          <text class="text">已完成</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cy-box">
+    <view class="cy-title">常用功能</view>
+    <view class="my-favorite" onTap="toMyfavourite">
+      <view class="my-favorite-box">
+        <text class="iconfont icon-wujiaoxingxingxing  b"></text>
+        <view>我的收藏</view>
+      </view>
+      <text class="iconfont icon-jiantou1 a"></text>
+    </view>
+    <view class="my-favorite" onTap="toContactPeople">
+      <view class="my-favorite-box">
+        <text class="iconfont icon-lianxiren b"></text>
+        <view class="b">常用出行人</view>
+      </view>
+      <text class="iconfont icon-jiantou1 a"></text>
+    </view>
+    <view class="my-favorite" onTap="toContact">
+      <view class="my-favorite-box">
+        <text class="iconfont icon-lxwm b"></text>
+        <view class="b">联系我们</view>
+      </view>
+      <text class="iconfont icon-jiantou1 a"></text>
+    </view>
+  </view>
+</view>

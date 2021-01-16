@@ -1,0 +1,124 @@
+@import '../../assets/style/iconfont.acss';
+.header{
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.header-bg{
+  width: 100%;
+  z-index: 1;
+}
+.mine-content{
+  position: relative;
+}
+.header-info{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 10%;
+  z-index: 1000;
+  pointer-events: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.header-l{
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 20px;
+}
+.header-img{
+  width: 100%;
+  height: 100%;
+}
+.header-r{
+  flex: 1;
+  font-size: 20px;
+  color: #ffffff;
+  z-index: 2000;
+  pointer-events: auto;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+}
+.my-order-box{
+  background-color: #ffffff;
+  margin-top: -20px;
+  z-index: 99;
+  border-radius: 0 30px 30px 30px;
+  margin-left: 3%;
+  margin-right: 3%;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-top: 10px;
+}
+.my-order{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  height: 100px;
+}
+.order-a{
+  width: 23%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.order-a>text:first-child{
+  font-size: 30px;
+}
+.my-order-title{
+  margin-left: 2%;
+  font-size: 18px;
+  font-weight: bold;
+}
+.cy-box{
+  margin: 15% 3% 0 3%;
+  box-sizing: border-box;
+}
+.cy-title{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.my-favorite{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
+  margin: 0 3%;
+  font-size: 16px;
+}
+.my-favorite:last-child{
+  border-bottom:0
+}
+.my-favorite-box{
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.my-favorite-box>text{
+  margin-right: 20px;
+  font-size: 24px;
+  color: #404040;
+}
+.b{
+  color: #404040;
+}
+.a{
+  color: #a5a5a5;
+}
+.yiwancheng_new{
+  font-size: 20px;
+}
+.text{
+  display: inline-block;
+  margin-top: 10px;
+}

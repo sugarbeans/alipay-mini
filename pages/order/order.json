@@ -1,0 +1,13 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "dialog": "../../component/dialog/dialog",
+    "loading": "../../component/loading/loading"
+  },
+  "onReachBottomDistance": 50,
+  "defaultTitle": "订单",
+  "pullRefresh": true,
+  "titleBarColor": "#fff"
+}

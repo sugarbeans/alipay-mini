@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "mp-searchbar": "../../component/searchbar/searchbar",
+    "search-bar": "../../component/type-search-bar/search-bar"
+  },
+  "defaultTitle": "酒店",
+  "titleBarColor": "#fff"
+}

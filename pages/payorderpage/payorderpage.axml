@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="success-box">
+    <view class="pay-success">
+      <icon type="success" size="100"/>
+      <text>支付成功</text>
+    </view>
+  </view>
+  <view class="btn-box">
+    <button
+      style="width: 40%;"
+      type="primary"
+      plain="{{plain}}"
+      onTap="toProduct"
+    > 继续购买 </button>
+    <button
+      style="width: 40%;"
+      type="warn"
+      plain="{{plain}}"
+      onTap="toOrder"
+    > 查看订单 </button>
+  </view>
+  <view class="time-box">
+    <text style="color:red;font-weight:900">{{time}}</text>后自动跳转订单页
+  </view>
+</view>

@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "search-bar": "../../component/type-search-bar/search-bar"
+  },
+  "defaultTitle": "景区",
+  "titleBarColor": "#fff"
+}

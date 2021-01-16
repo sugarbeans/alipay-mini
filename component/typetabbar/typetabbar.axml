@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="tab-bar-name">
+    <view
+      class="tab-bar-item {{active=='0'?'active':''}}"
+      data-id="0"
+      onTap="switchType"
+    >景区</view>
+    <view
+      class="tab-bar-item {{active=='1'?'active':''}}"
+      data-id="1"
+      onTap="switchType"
+    >酒店</view>
+    <view
+      class="tab-bar-item {{active=='2'?'active':''}}"
+      data-id="2"
+      onTap="switchType"
+    >特产</view>
+    <view
+      class="tab-bar-item {{active=='3'?'active':''}}"
+      data-id="3"
+      onTap="switchType"
+    >线路</view>
+    <view
+      class="tab-bar-item {{active=='4'?'active':''}}"
+      data-id="4"
+      onTap="switchType"
+    >场馆</view>
+  </view>
+  <slot></slot>
+</view>

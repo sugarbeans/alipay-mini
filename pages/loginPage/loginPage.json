@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "dialog": "../../component/dialog/dialog",
+    "loading": "../../component/loading/loading"
+  },
+  "defaultTitle": "支付宝授权登录",
+  "titleBarColor": "#fff"
+}

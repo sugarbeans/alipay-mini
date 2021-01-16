@@ -1,0 +1,14 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "price-calendar": "../../component/price-calendar/price-calendar",
+    "add-dialog": "../../component/add-dialog/add-dialog",
+    "dialog": "../../component/dialog/dialog",
+    "loading": "../../component/loading/loading",
+    "iconfont": "/iconfont/iconfont"
+  },
+  "defaultTitle": "预订",
+  "titleBarColor": "#fff"
+}

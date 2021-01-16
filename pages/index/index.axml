@@ -1,0 +1,89 @@
+<view class="main">
+<view class="scroll-top" hidden="{{isHiddenMsg}}">
+  <scroll-view>
+    <view class="msg-icon notice-icon">
+      <image src="../../assets/banner/laba.png"></image>
+    </view>
+    <!-- <view class="scrollbar" style="transform: translateX(-{{distance}}px)">
+      <text style="margin-right:{{space}}px;"></text>
+      <text id="mjltest" style="margin-left: 5px;">{{announcementText}}</text>
+      <text style="margin-right:{{space}}px;"></text>
+      <text>{{announcementText}}</text>
+    </view> -->
+    <view class="scrollbar" style="transform: translateX(-{{distance}}px)">
+      <text id="mjltest" style="margin-left: 35px;">{{announcementText}}</text>
+    </view>
+    <view class="msg-icon close-icon" catchTap="closeMsg">
+      <image src="../../assets/banner/close.png"></image>
+    </view>
+  </scroll-view>
+</view>
+  <swiper style="width:100%; height: 255px;"  autoplay="true" circular="true">
+    <swiper-item><image src="../../assets/banner/banner-01.png"></image></swiper-item>
+    <swiper-item><image src="../../assets/banner/banner-02.png"></image></swiper-item>
+    <swiper-item><image src="../../assets/banner/banner-00.png"></image></swiper-item>
+  </swiper>
+  <view class="logo">
+    <view class="logo-box">
+      <image class="logo-image" src="../../assets/banner/logo-bg.png"></image>
+    </view>
+  </view>
+  <view class="logo-btn">
+    <view class="icon-box">
+      <view class="icon-a" data-id="1" onTap="toBase">
+        <view class="icon-img a"><text class="iconfont icon-menpiaoyuding"></text></view>
+        <view class="icon-text">自助购票</view>
+      </view>
+      <view class="icon-a" data-id="2" onTap="toBase">
+        <view class="icon-img b"><text class="iconfont icon-daolan-jingqu"></text></view>
+        <view class="icon-text">景区导览</view>
+      </view>
+      <view class="icon-a" data-id="3" onTap="toBase">
+        <view class="icon-img c"><text class="iconfont icon-fujinjingqu"></text></view>
+        <view class="icon-text">周边景点</view>
+      </view>
+      <view class="icon-a" data-id="4" onTap="toBase">
+        <view class="icon-img d"><text class="iconfont icon-jingqux"></text></view>
+        <view class="icon-text">游玩攻略</view>
+      </view>
+      <view class="icon-a" data-id="5" onTap="toBase">
+        <view class="icon-img e"><text class="iconfont icon-canyin"></text></view>
+        <view class="icon-text">周边餐饮</view>
+      </view>
+    </view>
+  </view>
+  <!-- 热门景区 -->
+  <view class="hot-ticket" a:if="{{hotTicketList.length>0}}">
+    <view class="hot-ticket-title">
+      <text class="hot-ticket-title-text">热门景区</text>
+      <view class="hot-ticket-title-more" onTap="toBase" data-id="1">更多<text class="iconfont icon-arrow-right"></text></view>
+      <image class="hot-ticke-border" src="../../assets/banner/boder-bottom.png"></image>
+    </view>
+    <view class="ticket-main">
+      <view class="ticket-box" data-id="{{hotTicketList[0].providerId}}" onTap="toTicket">
+        <view class="ticket-image-box">
+          <image class="ticket-image" src="{{hotTicketList[0].pictureUrl}}" binderror="bindErrorImg"  data-errorimg="{{0}}" />
+        </view>
+        <view class="ticket-text-box">
+          <view >{{hotTicketList[0].providerName}}</view>
+          <view >{{hotTicketList[0].szgradename}}--{{hotTicketList[0].szaddress}}</view>
+        </view>
+      </view>
+            <view class="ticket-box" data-id="{{hotTicketList[1].providerId}}" onTap="toTicket">
+        <view class="ticket-image-box">
+          <image class="ticket-image" src="{{hotTicketList[1].pictureUrl}}" binderror="bindErrorImg"  data-errorimg="{{0}}" />
+        </view>
+        <view class="ticket-text-box">
+          <view >{{hotTicketList[1].providerName}}</view>
+          <view >{{hotTicketList[1].szgradename}}--{{hotTicketList[1].szaddress}}</view>
+        </view>
+      </view>
+      <view class="hot-small">
+        <view class="hot-small-box" a:for="{{hotTicketList}}" a:for-index="index" a:key="encryptId" a:if="{{index>1 && index<5}}" data-id="{{item.providerId}}" onTap="toTicket">
+          <image class="hot-small-img" src="{{item.pictureUrl}}" binderror="bindErrorImg" data-errorimg="{{0}}" />
+          <view class="hot-small-title">{{item.providerName}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

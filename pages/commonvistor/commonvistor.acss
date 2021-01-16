@@ -1,0 +1,65 @@
+page{
+  background-color: #ffffff;
+}
+.no-common-vistor{
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  line-height: 200px;
+  font-size: 16px;
+}
+.add-vistor-btn{
+  width: 90%;
+  margin: 20px 5%;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 8px;
+  background-color: #35c0ff;
+  color: #ffffff;
+}
+.vistor-list{
+  overflow: hidden;
+  overflow-y: auto;
+}
+.vistor-list-item{
+  margin: 0 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+}
+.vistor-list-item-l{
+  width: 78%;
+}
+.edit-box{
+  width: 18%;
+}
+.vistor-name-c{
+  font-size: 14px;
+  font-weight: bold;
+}
+.vistor-type,.vistor-c{
+  font-size: 12px;
+}
+.edit-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon-bianji1{
+  font-size: 20px;
+}
+.edit-text{
+  font-size: 16px;
+}
+.icon-chahao{
+  font-size: 30px;
+  color: #ffffff;
+  position: fixed;
+  left: 45%;
+  bottom: 20%;
+  z-index: 2000;
+}

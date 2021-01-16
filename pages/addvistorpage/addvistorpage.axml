@@ -1,0 +1,59 @@
+<view class="container">
+  <view class="name-box">
+    <view class="name"><text class="iconfont icon-xingming"></text>姓 名</view>
+    <!-- WX2MY: 属性auto-focus不被支持，请调整。 -->
+    <input
+      class="name-input"
+      value="{{name}}"
+      onInput="getName"
+      auto-focus
+      placeholder="请输入姓名"
+      maxlength="6"
+    />
+  </view>
+  <view class="name-box">
+    <view class="name"><text class="iconfont icon-shouji"></text>电 话</view>
+    <input
+      class="name-input"
+      value="{{phone}}"
+      onInput="getPhone"
+      placeholder="请输入电话号码"
+      maxlength="11"
+    />
+  </view>
+  <view class="name-box">
+    <view class="name {{codeTypeFlag?'active-type':''}}" onTap="chooseCodeType"><text class="iconfont icon-sfz"></text>{{typeName}}
+      <text class="iconfont icon-top"></text>
+    </view>
+    <input
+      class="name-input"
+      value="{{code}}"
+      onInput="getCode"
+      placeholder="请输入证件号码"
+      maxlength="18"
+    />
+    <view a:if="{{codeTypeFlag}}" class="name-type">
+      <view
+        class="all-name-type-item"
+        a:for="{{visitorType}}"
+        a:for-index="i"
+        a:key="{{item.pmcd}}"
+        data-id="{{item.pmcd}}"
+        data-name="{{item.pmva}}"
+        onTap="chooseTypeItem"
+      >{{item.pmva}}</view>
+    </view>
+  </view>
+  <!-- <view class="switch-box">
+    <view class="switch-text">是否设置为常用联系人</view>
+    <switch class="tui-fr" checked="{{isChecked}}" bindchange="changeSwitch"/>
+  </view> -->
+  <view class="finish-btn">
+    <view class="btn" onTap="finishAddVistor">完成</view>
+    <!-- <button
+      loading="{{loading}}"
+      onTap="finishAddVistor"
+      type="primary"
+    >完成</button> -->
+  </view>
+</view>

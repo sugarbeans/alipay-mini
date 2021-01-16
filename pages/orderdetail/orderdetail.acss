@@ -1,0 +1,161 @@
+@import '../../assets/style/iconfont.acss';
+.order-code-box{
+  width: 100%;
+  text-align: center;
+  margin: 3%;
+  background-color: #eaf8ff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+.icon-wzf{
+  font-size: 40px;
+}
+.order-statu{
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+.order-code{
+  height: 30px;
+  color: #434343;
+}
+.order-code>text{
+  line-height: 30px;
+}
+.order-title-box{
+  margin: 3%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 2%;
+  box-sizing: border-box;
+}
+.order-title{
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666666;
+}
+.order-detail{
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 10px;
+}
+.order-a{
+  height: 30px;
+  line-height: 30px;
+}
+.order-c{
+  font-size: 16px;
+  color: #888888;
+}
+.order-b{
+  font-size: 16px;
+  color: #434343;
+}
+.order-price{
+  margin-top: 60px;
+  font-size: 18px;
+  color: #434343;
+}
+.rule{
+  margin: 0 1%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ticket-rule{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f6f9fb;
+  color: #434343;
+  margin: 10px 0;
+}
+.icon-ok2{
+  color: #c9dae1;
+  font-size: 18px;
+}
+.order-time-box{
+  margin: 3%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-sizing: border-box;
+}
+.order-time{
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+}
+.order-detail-vistor-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 45px;
+  border-bottom: 1px solid #cccccc;
+}
+.vistor-name{
+  width: 25%;
+  text-align: center;
+  font-size: 12px;
+}
+.vistor-qrcode{
+  width: 100%;
+}
+.vistor-code-num{
+  flex: 1;
+  text-align: left;
+  font-size: 12px;
+}
+.icon-qrcode{
+  color: #35c0ff;
+  font-size: 20px;
+}
+.vistor-qrcode-text{
+  font-size: 16px;
+}
+.order-detail-s{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+}
+.a{
+  display: inline-block;
+  width: 50%;
+}
+.finish-btn{
+  top: 20px;
+  position: absolute;
+  width: 20%;
+  right: 20px;
+}
+.btn-refundor, .btn-pay{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background-color: rgb(254, 160, 0);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+}
+.btn-submit{
+  width: 25%;
+  height: 20px;
+  line-height: 20px;
+  background-color: rgb(254, 160, 0);
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-pay {
+  background-color: rgb(53, 192, 255);
+}

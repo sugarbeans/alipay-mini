@@ -1,0 +1,115 @@
+<view a:if="{{showLoading}}">
+  <loading loadingText="{{loadingText}}"></loading>
+</view>
+<view class="container">
+  <view class="title-img">
+    <image
+      src="{{poi.pictureUrl}}"
+    />
+  </view>
+  <view class="title-body">
+    <view
+      class="ticket-item"
+      a:for="{{productList}}"
+      a:for-index="index"
+      a:key="index"
+      a:if="{{index<=activeNum}}"
+    >
+      <view class="ticket">
+        <view class="ticket-name">{{item.ticketName}} 
+          <image
+            a:if="{{item.productnote && index <2}}"
+            class="ticket-sale"
+            src="../../assets/banner/sale.png"
+          ></image>
+        </view>
+        <view
+          class="sea-info"
+          a:if="{{item.productnote}}"
+          data-obj="{{item}}"
+          onTap="seeRule"
+        >预定说明
+          <text class="iconfont icon-jiantou1" style="margin-left: 10px;"></text>
+        </view>
+      </view>
+      <view class="ticket-operat">
+        <view class="ticket-price">
+          <text>￥</text>
+          <text>{{item.prices[0].saleprice}}</text>起
+        </view>
+        <view
+          class="ticket-btn"
+          data-obj="{{item}}"
+          onTap="toBookProduct"
+        >预订</view>
+      </view>
+    </view>
+    <block a:if="{{productList.length>3}}">
+      <view
+        a:if="{{activeNum<=3}}"
+        class="more-item"
+        onTap="moreItem"
+      >展开更多
+        <text class="iconfont icon-jiantou1"></text>
+      </view>
+      <view
+        a:else
+        class="more-item"
+        onTap="lessItem"
+      >收起
+        <text class="iconfont icon-top"></text>
+      </view>
+    </block>
+  </view>
+  <view class="scenic-introduce" a:if="{{poi.bookdescription}}">
+    <view class="scenic-title">预订须知</view>
+    <view class="introduce-text">
+      <rich-text nodes="{{poi.bookdescriptionArr}}"></rich-text>
+    </view>
+  </view>
+  <view class="scenic-introduce" a:if="{{poi.szsimpleintroduction}}">
+    <view class="scenic-title">简介</view>
+    <view class="introduce-text">
+      <rich-text nodes="{{poi.szsimpleintroductionArr}}"></rich-text>
+    </view>
+  </view>
+  <view class="scenic-introduce" a:if="{{poi.sznote}}">
+    <view class="scenic-title">景区介绍</view>
+    <view class="introduce-text">
+      <rich-text nodes="{{poi.sznoteArr}}"></rich-text>
+    </view>
+  </view>
+  <view class="scenic-introduce" a:if="{{productList.verificationShow}}">
+    <view class="scenic-title">验证说明</view>
+    <view class="introduce-text">
+      <view
+        a:for="{{productList.verificationShow}}"
+        a:for-index="index"
+        a:key="index"
+        class=""
+      >{{index+1+'.'+item.verificationShow}}</view>
+    </view>
+  </view>
+  <!-- <view class="scenic-introduce" a:if="{{!showLoading}}">
+    <view class="scenic-title">位置详情</view>
+    <view class="introduce-text">
+      <map
+        id="myMap"
+        style="width: 100%; height: 300px;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        scale="{{scale}}"
+        show-location
+      ></map>
+    </view>
+  </view> -->
+</view>
+<dialog
+  title="预订说明"
+  show="{{ruleShow}}"
+  onButtontap="tapDialogButton"
+  buttons="{{textButton}}"
+>
+  <view class="rule-item">{{itemRule}}</view>
+</dialog>

@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "typetabbar": "../../component/typetabbar/typetabbar",
+    "iconfont": "..\\..\\..\\..\\iconfont\\iconfont"
+  },
+  "defaultTitle": "我的收藏",
+  "titleBarColor": "#fff"
+}

@@ -1,0 +1,231 @@
+<view a:if="{{showPayLoading}}">
+  <loading loadingText="{{loadingText}}"></loading>
+</view>
+<view class="book-container {{showCalendar?'date-out-box-fixed':''}}">
+  <view
+    a:if="{{showCalendar}}"
+    onTap="closeCalendaer"
+    class="mask-box"
+  ></view>
+  <view class="date-out-box ">
+    <view class="title">{{productInfo.ticketName}}</view>
+    <view class="chose-date">
+      <view class="chose-title">选择日期 {{newDate}}</view>
+      <view class="date-box" style=" white-space: nowrap;">
+        <view
+          class="date-item {{item.date==newDate?'active':''}}"
+          a:for="{{dateList}}"
+          a:for-item="item"
+          a:for-index="index"
+          a:key="index"
+          data-obj="{{item}}"
+          onTap="choseDateOut"
+          a:if="{{index >= min && index<= max}}"
+        >
+          <view class="date">{{item.date}}</view>
+          <text a:if="{{item.date==newDate}}" class="iconfont icon-ok icon-ok1"></text>
+        </view>
+        <view class="more-date" onTap="showCalendarDialog">
+          <view>
+            <text class="iconfont icon-arrow-right"></text>
+          </view>
+        </view>
+        <view class="more-date-box" a:if="{{showCalendar}}">
+          <price-calendar
+            onPreDate="preDate"
+            onChoseDate="choseDate"
+            encryptId="{{encryptId}}"
+            priceList="{{dateList}}"
+            dateActive="{{dateActive}}"
+          ></price-calendar>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="date-out-box  mt-20" a:if="{{stockList && stockList.length > 0}}">
+    <view class="chose-date">
+      <view class="chose-title">选择分时</view>
+      <view class="time-box" style=" white-space: nowrap;">
+        <view
+          class="time-item {{item.subStockid==activeTime?'active':''}}"
+          a:for="{{stockList}}"
+          a:for-item="item"
+          a:for-index="index"
+          a:key="index"
+          data-stock-obj="{{item}}"
+          onTap="chooseTimeOut"
+        >
+          <view class="date">{{item.begintime}}~{{item.endtime}}</view>
+          <view class="price-stock">
+            <view class="price">余:{{item.surplusnumb}}</view>
+          </view>
+          <text a:if="{{item.subStockid==activeTime}}" class="iconfont icon-ok icon-ok1"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="number-box-price"
+    a:for="{{priceList}}"
+    a:for-item="item"
+    a:for-index="index"
+    a:key="index"
+  >
+    <view class="number-box">
+      <view class="ticket-title">{{item.crowdkindname}} [￥{{item.saleprice}}]</view>
+      <view class="change-box">
+        <view  onTap="minusTicketIndex" data-index="{{index}}">
+          <iconfont name="jian-copy1" size="24"></iconfont>
+        </view>
+        <input
+          class="input-box"
+          value="{{item.number}}"
+          data-index="{{index}}"
+          onBlur="getNumber"
+        />
+        <view onTap="addTicketIndex"
+          data-index="{{index}}">
+        <iconfont
+          name="add"
+          size="24"
+        ></iconfont>
+        </view>
+      </view>
+    </view>
+    <view class="vistor-box" a:if="{{item.number>0 && item.isRealname}}">
+      <view class="vistor-info-add">
+        <view class="ticket-title"></view>
+        <view
+          class="add-vistor"
+          data-price-obj="{{item}}"
+          data-price-index="{{index}}"
+          onTap="showMaskDialog"
+        >+ 新增出行人</view>
+      </view>
+      <view class="vistor">
+        <view class="vistor-item">
+          <text
+            class="{{item.vistorActive==keys?'vistor-active':''}}"
+            a:for="{{item.vistorList}}"
+            a:for-index="keys"
+            a:key="keys"
+            a:for-item="vistor"
+            data-id="{{keys}}"
+            onTap="changeVistor"
+            data-index="{{index}}"
+            data-obj="{{vistor}}"
+            a:if="{{keys<3}}"
+          >{{vistor.name}}</text>
+        </view>
+        <view class="more-vistor" a:if="{{moreVistor}}">
+          <text
+            class="{{item.vistorActive==keys?'vistor-active':''}}"
+            a:for="{{item.vistorList}}"
+            a:for-index="keys"
+            a:key="keys"
+            a:for-item="vistor"
+            data-id="{{keys}}"
+            onTap="changeVistor"
+            data-index="{{index}}"
+            a:if="{{keys>=3}}"
+            data-obj="{{vistor}}"
+          >{{vistor.name}}</text>
+        </view>
+        <view
+          class="add-vistor"
+          a:if="{{item.vistorList.length>3}}"
+          onTap="showMoreVistor"
+        >更多({{item.vistorList.length-3==0?'':item.vistorList.length-3}})</view>
+      </view>
+      <view class="vistor-info" a:if="{{item.vistorActive != null}}">
+        <view class="vistor-name">
+          <text class="iconfont icon-s icon-xingming"></text>
+          <text class="vistor-type">姓  名</text>
+          <text class="vistor-c">{{name}}</text>
+        </view>
+        <view class="vistor-name">
+          <text class="iconfont icon-s icon-shouji"></text>
+          <text class="vistor-type">手机号</text>
+          <text class="vistor-c">{{phone}}</text>
+        </view>
+        <view class="vistor-name">
+          <text class="iconfont icon-s icon-sfz"></text>
+          <text class="vistor-type">证件号</text>
+          <text class="vistor-c">{{code}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="ticket-contact">
+    <view class="vistor-info-add">
+      <view class="ticket-title">联系人信息</view>
+      <!-- <view class="add-vistor" bindtap="showMaskDialog">+ 新增联系人</view> -->
+    </view>
+    <view class="ticket-contact-item">
+      <view class="ticket-contact-b">姓  名</view>
+      <input
+        class="contact-phone"
+        onInput="getName"
+        placeholder="请输入姓名"
+        value="{{contactName}}"
+        maxlength="6"
+      />
+    </view>
+    <view class="ticket-contact-item">
+      <view class="ticket-contact-b">电  话</view>
+      <input
+        class="contact-phone"
+        onInput="getPhone"
+        value="{{contactPhone}}"
+        placeholder="请输入电话号码"
+        maxlength="11"
+      />
+    </view>
+    <view class="ticket-contact-item" a:if="{{contactType.length>0}}">
+      <view class="ticket-contact-b {{codeTypeFlag?'active-type':''}}" onTap="chooseType">{{typeName}}<text class="iconfont icon-top"></text></view>
+      <input class="contact-phone" onInput="getCode" value="{{contactCode}}" placeholder="请输入证件号码" maxlength="18" />
+      <view a:if="{{codeTypeFlag}}" class="name-type">
+        <view class="name-type-item" a:for="{{contactType}}" a:for-index="i"  a:key="{{item.pmcd}}" data-id="{{item.pmcd}}" data-name="{{item.pmva}}" onTap="chooseTypeItem">{{item.pmva}}</view>
+      </view>
+    </view>
+  </view>
+  <add-dialog
+    a:if="{{showMask}}"
+    priceObj="{{priceObj}}"
+    priceIndex="{{priceIndex}}"
+    commonVistorList="{{commonVistorList}}"
+    priceList="{{priceList}}"
+    onCloseMaskDialog="closeMaskDialog"
+    onChooseCommonVistor="chooseCommonVistor"
+    onToAddVistor="toAddVistor"
+  ></add-dialog>
+  <dialog
+    title="编辑出行人"
+    show="{{showDialog}}"
+    onButtontap="tapDialogButton"
+    buttons="{{textButton}}"
+  >
+    <view class="operaBtn-box">
+      <button
+        class="operaBtn"
+        type="warn"
+        onTap="deleteInfo"
+      > 删除 </button>
+      <button
+        class="operaBtn"
+        type="primary"
+        onTap="changeInfo"
+      > 编辑 </button>
+    </view>
+  </dialog>
+</view>
+<view class="save-box">
+  <view class="price">
+    <view>总计</view>
+    <view>
+      <text class="price-icon">￥</text>
+      <text class="price-num">{{total}}</text>
+    </view>
+  </view>
+  <view class="btn" onTap="payOrder">提交并支付</view>
+</view>
