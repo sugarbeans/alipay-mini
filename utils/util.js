@@ -95,7 +95,7 @@ const phoneRule = function(phone){ //手机号验证
   }
 }
 
-const baseUrl = 'https://saascs.ectrip.com'
+const baseUrl = 'https://saas.ectrip.com'
 
 module.exports = {
   formatTime,
