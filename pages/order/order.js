@@ -70,7 +70,8 @@ Page({
 	      enddate: "",
 	      requestid: 1,
 	      usid: "",
-	      version: "1.0"
+	      version: "1.0",
+        "companyId": getApp().globalData.companyId
       },
       timeout: 300000,
       success: function (res) {

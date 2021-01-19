@@ -43,15 +43,15 @@
         </view>
       </view>
       <view class="vistor-qrcode" a:else>
-        <swiper style="width:100%; height: 250px; ">
-          <swiper-item  a:for="{{i.realnamelist}}" a:for-index="z" a:for-item="j">
-            <view style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-              <image style="width: 200px; height: 200px;" src="data:image/ico;base64,{{j.ticketNoBase64}}" alt=""/>
-              <view class="vistor-qrcode-text">核销码{{z+1}}<text a:if="{{i.num>1}}" style="color: rgb(254, 160, 0);">（滑动切换）</text></view>
-            </view>
-            </swiper-item>
-          <!-- <swiper-item><image src="../../assets/banner/banner-02.png"></image></swiper-item>
-          <swiper-item><image src="../../assets/banner/banner-00.png"></image></swiper-item> -->
+        <swiper style="width:100%; height: 250px; " a:if="{{orderInfoView.ddzt==='02'}}">
+        <swiper-item  a:for="{{i.realnamelist}}" a:for-index="z" a:for-item="j">
+          <view style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <image style="width: 200px; height: 200px;" src="data:image/ico;base64,{{j.ticketNoBase64}}" alt=""/>
+            <view class="vistor-qrcode-text">核销码{{z+1}}<text a:if="{{i.num>1}}" style="color: rgb(254, 160, 0);">（滑动切换）</text></view>
+          </view>
+          </swiper-item>
+        <!-- <swiper-item><image src="../../assets/banner/banner-02.png"></image></swiper-item>
+        <swiper-item><image src="../../assets/banner/banner-00.png"></image></swiper-item> -->
         </swiper>
       </view>
     </view>

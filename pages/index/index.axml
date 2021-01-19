@@ -54,11 +54,13 @@
   </view>
   <!-- 热门景区 -->
   <view class="hot-ticket" a:if="{{hotTicketList.length>0}}">
-    <view class="hot-ticket-title">
-      <text class="hot-ticket-title-text">热门景区</text>
-      <view class="hot-ticket-title-more" onTap="toBase" data-id="1">更多<text class="iconfont icon-arrow-right"></text></view>
-      <image class="hot-ticke-border" src="../../assets/banner/boder-bottom.png"></image>
-    </view>
+    <block a:if="{{hotTicketList.length>5}}">
+      <view class="hot-ticket-title">
+        <text class="hot-ticket-title-text">热门景区</text>
+        <view class="hot-ticket-title-more" onTap="toBase" data-id="1">更多<text class="iconfont icon-arrow-right"></text></view>
+        <image class="hot-ticke-border" src="../../assets/banner/boder-bottom.png"></image>
+      </view>
+    </block>
     <view class="ticket-main">
       <view class="ticket-box" data-id="{{hotTicketList[0].providerId}}" onTap="toTicket">
         <view class="ticket-image-box">
@@ -69,16 +71,18 @@
           <view >{{hotTicketList[0].szgradename}}--{{hotTicketList[0].szaddress}}</view>
         </view>
       </view>
-            <view class="ticket-box" data-id="{{hotTicketList[1].providerId}}" onTap="toTicket">
-        <view class="ticket-image-box">
-          <image class="ticket-image" src="{{hotTicketList[1].pictureUrl}}" binderror="bindErrorImg"  data-errorimg="{{0}}" />
+      <block  a:if="{{hotTicketList.length>1}}">
+        <view class="ticket-box" data-id="{{hotTicketList[1].providerId}}" onTap="toTicket">
+          <view class="ticket-image-box">
+            <image class="ticket-image" src="{{hotTicketList[1].pictureUrl}}" binderror="bindErrorImg"  data-errorimg="{{0}}" />
+          </view>
+          <view class="ticket-text-box">
+            <view >{{hotTicketList[1].providerName}}</view>
+            <view >{{hotTicketList[1].szgradename}}--{{hotTicketList[1].szaddress}}</view>
+          </view>
         </view>
-        <view class="ticket-text-box">
-          <view >{{hotTicketList[1].providerName}}</view>
-          <view >{{hotTicketList[1].szgradename}}--{{hotTicketList[1].szaddress}}</view>
-        </view>
-      </view>
-      <view class="hot-small">
+      </block>
+      <view class="hot-small" a:if="{{hotTicketList.length>2}}">
         <view class="hot-small-box" a:for="{{hotTicketList}}" a:for-index="index" a:key="encryptId" a:if="{{index>1 && index<5}}" data-id="{{item.providerId}}" onTap="toTicket">
           <image class="hot-small-img" src="{{item.pictureUrl}}" binderror="bindErrorImg" data-errorimg="{{0}}" />
           <view class="hot-small-title">{{item.providerName}}</view>

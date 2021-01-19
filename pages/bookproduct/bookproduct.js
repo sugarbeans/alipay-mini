@@ -41,10 +41,10 @@ Page({
     max: 2
   },
   onLoad: function (option) {
-    this.getPrice(getApp().globalData.product, getApp().globalData.visitorType, getApp().globalData.stockList); 
+    this.getPrice(getApp().globalData.product, getApp().globalData.visitorType, getApp().globalData.stockList);
   },
   onShow: function () {
-    
+
   },
   closeCalendaer: function () {
     this.setData({
@@ -113,7 +113,8 @@ Page({
           "getPro": 0,
           "requestid": 1,
           "usid": "",
-          "version": "1.0"
+          "version": "1.0",
+          "companyId": getApp().globalData.companyId
         },
         success: function (res) {
           if (res.data.code === '200') {
@@ -124,7 +125,7 @@ Page({
             _arr[0].imaxdata = _obj.imaxdata ? _obj.imaxdata : 7
             _arr[0].providerId = that.data.encryptId
             if(_arr.length> 0) {
-              that.getPrice(_arr[0], getApp().globalData.visitorType, _obj.providersubstocks, that.data.newDate); 
+              that.getPrice(_arr[0], getApp().globalData.visitorType, _obj.providersubstocks, that.data.newDate);
             } else {
               my.showToast({
                 type: 'fail',
@@ -134,7 +135,7 @@ Page({
             that.setData({
               showPayLoading: false,
             });
-            
+
           } else if(res.data.code === '202') {
             my.navigateTo({
               url: '/pages/loginPage/loginPage'
@@ -168,13 +169,13 @@ Page({
       this.setData({
         max: 2,
         min: 0
-      }) 
+      })
     } else {
       if(_max + 3 >_length ) {
         this.setData({
           max: _length,
           min: _length - 3
-        }) 
+        })
       } else {
         this.setData({
           max: _max+3,
@@ -290,9 +291,9 @@ Page({
             content: '出行人数量和预订数量不匹配!'
           });
           return;
-      } 
+      }
     })
-        
+
     if (!that.data.contactName) {
       my.showToast({
         type: 'fail',
@@ -379,7 +380,8 @@ Page({
       requestid: 1,
       usid: '',
       version: '1.0',
-      orders: orders
+      orders: orders,
+      "companyId": getApp().globalData.companyId
     };
     console.log(obj, 'create-order');
     my.request({
@@ -433,19 +435,20 @@ Page({
 	      orid: orid,
 	      requestid: 1,
 	      usid: usid,
-	      version: "1.0"
+	      version: "1.0",
+        "companyId": getApp().globalData.companyId
       },
       method: 'POST',
       timeout: 300000,
       success: function (res) {
         that.setData({
           showPayLoading: false
-        }) 
+        })
         if(res.data.code==='200'){
           let _tradeno = res.data.data.tradeno
           my.tradePay({
             tradeNO: _tradeno,
-            success () { 
+            success () {
               my.alert({
                 content: `${JSON.stringify(res.data.message)}, 跳转到订单列表页面`,
               });
@@ -453,7 +456,7 @@ Page({
                 url:"/pages/order/order"
               })
             },
-            fail () { 
+            fail () {
               my.navigateBack({
                 delta:1,
               })
@@ -569,7 +572,7 @@ Page({
       key: 'vistorList',
       data: this.data.vistorList
     });
-    
+
   },
   changeInfo: function () {
     let that = this;

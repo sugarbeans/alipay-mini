@@ -45,7 +45,7 @@ Page({
     let baseUrl = util.baseUrl;
     let that = this;
     my.request({
-      url: baseUrl + '/api/ali/alilogin?code='+e,
+      url: baseUrl + '/api/ali/alilogin?code='+e+'&companyId='+getApp().globalData.companyId,
       method: 'GET',
       timeout: 300000,
       success: function (res) {

@@ -62,7 +62,8 @@ Page({
           "getPro": 0,
           "requestid": 1,
           "usid": getApp().globalData.usid,
-          "version": "1.0"
+          "version": "1.0",
+          "companyId": getApp().globalData.companyId
         },
         success: function (res) {
           if (res.data.code === '200') {
@@ -101,6 +102,12 @@ Page({
     let that = this
     my.request({ //获取证件类型
       url: baseUrl +'/api/order/findZjtp',
+      data: {
+        "requestid": 1,
+        "usid": getApp().globalData.usid,
+        "version": "1.0",
+        "companyId": getApp().globalData.companyId
+      },
       method:'POST',
       timeout:300000,
       success:function(res){
@@ -175,7 +182,7 @@ Page({
   toBookProduct: function (e) {
     getApp().globalData.product = e.currentTarget.dataset.obj
     getApp().globalData.stockList = this.data.stockList
-    
+
     my.navigateTo({
       url: '/pages/bookproduct/bookproduct'
     });

@@ -8,10 +8,10 @@ Page({
     //滚动速度
     step: 1,
     //初始滚动距离
-    distance: 0, 
+    distance: 0,
     space: 30,
     // 时间间隔
-    interval: 20, 
+    interval: 20,
   },
   onLoad(query) {
   },
@@ -33,7 +33,8 @@ Page({
         "getDetail": 1,
         "requestid": 1,
         "usid": "",
-        "version": "1.0"
+        "version": "1.0",
+        "companyId": getApp().globalData.companyId
       },
       success:function(res){
         if(res.data.code === '200'){
@@ -81,7 +82,7 @@ Page({
       url:'/pages/ticket/ticket'
     })
   },
-  toBase:function(e){ 
+  toBase:function(e){
     let _id = e.currentTarget.dataset.id
     switch (_id) {
       case '1':
@@ -128,7 +129,7 @@ Page({
     this.setData({ isHiddenMsg: true});
     clearInterval(this.data.interval);
   },
-  
+
  /** 获取滚动条基本信息 */
   topScroll(){
     var that = this;

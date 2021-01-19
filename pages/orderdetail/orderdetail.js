@@ -28,7 +28,8 @@ Page({
         orid: id,
         requestid: 1,
         usid: '',
-        version: '1.0'
+        version: '1.0',
+        "companyId": getApp().globalData.companyId
       },
       method: 'POST',
       timeout: 300000,
@@ -76,7 +77,8 @@ Page({
         isqzylkc: 0, //是否退订预留库存 1:是,0:否 死
         iszl: 0, //是否收取手续费 1是 0否 死
         num: 0, //退订数量 死
-        seqs: []
+        seqs: [],
+        "companyId": getApp().globalData.companyId
       },
       method: 'POST',
       timeout: 300000,
@@ -125,12 +127,13 @@ Page({
           orid: that.data.orderInfoView.orid,
           requestid: 1,
           usid: _usid,
-          version: "1.0"
+          version: "1.0",
+          "companyId": getApp().globalData.companyId
         },
         method: 'POST',
         timeout: 300000,
         success: function (res) {
-          console.log(res, 'res-pay'); 
+          console.log(res, 'res-pay');
           if(res.data.code==='200'){
             let _tradeno = res.data.data.tradeno
             my.tradePay({
@@ -138,7 +141,7 @@ Page({
               success () {
                 that.setData({
                   showPayLoading:false
-                }) 
+                })
                 my.alert({
                   content: `${JSON.stringify(res.data.message)}, 跳转到订单列表页面`,
                 });
@@ -149,7 +152,7 @@ Page({
               fail () {
                 that.setData({
                   showPayLoading:false
-                }) 
+                })
                 my.showToast({
                   type: 'fail',
                   content: '支付失败'
@@ -186,7 +189,7 @@ Page({
       });
       my.navigateTo({url: '/pages/loginPage/loginPage'})
     }
-    
+
   },
 
   seeQRcode: function (e) {
