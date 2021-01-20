@@ -62,7 +62,7 @@ Page({
       loadingText: '订单加载中...'
     });
     my.request({
-      url: baseUrl + '/api/user/getOrderBefore',
+      url: baseUrl + '/smallprogram/user/getOrderBefore',
       method: 'POST',
       data: {
         begindate: "",

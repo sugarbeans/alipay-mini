@@ -23,7 +23,7 @@ Page({
       loadingText: "加载中..."
     });
     my.request({
-      url: baseUrl + '/api/user/orderView',
+      url: baseUrl + '/smallprogram/user/orderView',
       data: {
         orid: id,
         requestid: 1,
@@ -66,7 +66,7 @@ Page({
       loadingText: "加载中..."
     });
     my.request({
-      url: baseUrl + '/api/refund/refundorder',
+      url: baseUrl + '/smallprogram/refund/refundorder',
       data: {
         iscenicid: that.data.orderInfoView.scenicorders[0].iscenicid,
         orid: _orid,
@@ -122,7 +122,7 @@ Page({
         showPayLoading: true
       });
       my.request({
-        url: baseUrl + '/api/ali/smallalipay',
+        url: baseUrl + '/smallprogram/ali/smallalipay',
         data: {
           orid: that.data.orderInfoView.orid,
           requestid: 1,

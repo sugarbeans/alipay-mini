@@ -26,7 +26,7 @@ Page({
     let baseUrl = util.baseUrl
     let that = this
     my.request({ //获取首页数据
-      url: baseUrl +'/api/order/findProviders',
+      url: baseUrl +'/smallprogram/order/findProviders',
       method:'POST',
       timeout:300000,
       data: {

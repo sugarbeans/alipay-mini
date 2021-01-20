@@ -105,7 +105,7 @@ Page({
     let baseUrl = util.baseUrl;
     let that = this;
       my.request({
-        url: baseUrl + '/api/order/findTickets',
+        url: baseUrl + '/smallprogram/order/findTickets',
         method: 'POST',
         data: {
           "providerId": this.data.encryptId,
@@ -385,7 +385,7 @@ Page({
     };
     console.log(obj, 'create-order');
     my.request({
-      url: baseUrl + '/api/order/createTicketOrder',
+      url: baseUrl + '/smallprogram/order/createTicketOrder',
       data: obj,
       method: 'POST',
       timeout: 300000,
@@ -430,7 +430,7 @@ Page({
     let that = this;
     getApp().globalData.usid = usid
     my.request({
-      url: baseUrl + '/api/ali/smallalipay',
+      url: baseUrl + '/smallprogram/ali/smallalipay',
       data: {
 	      orid: orid,
 	      requestid: 1,

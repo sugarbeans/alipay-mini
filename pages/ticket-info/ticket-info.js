@@ -54,7 +54,7 @@ Page({
     let baseUrl = util.baseUrl;
     let that = this;
       my.request({
-        url: baseUrl + '/api/order/findTickets',
+        url: baseUrl + '/smallprogram/order/findTickets',
         method: 'POST',
         data: {
           "providerId": encryptId,
@@ -101,7 +101,7 @@ Page({
     let baseUrl = util.baseUrl
     let that = this
     my.request({ //获取证件类型
-      url: baseUrl +'/api/order/findZjtp',
+      url: baseUrl +'/smallprogram/order/findZjtp',
       data: {
         "requestid": 1,
         "usid": getApp().globalData.usid,

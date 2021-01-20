@@ -8,7 +8,7 @@ App({
     visitorType: null,
     priceObj: null,
     id: null,
-    companyId: 2
+    companyId: 7
   },
   onLaunch(options) {
     // 第一次打开
