@@ -7,7 +7,7 @@
 }
 image{
   width: 100%;
-  height: 100%; 
+  height: 100%;
 }
 .logo{
   background-repeat: no-repeat;
@@ -17,8 +17,8 @@ image{
   left: 2%;
 }
 .logo-box{
-  width:  100px;
-  height: 100px;
+  width:  50px;
+  height: 50px;
   position: relative;
 }
 .logo-box image{
@@ -225,13 +225,13 @@ image{
 }
 .msg-icon>image{
   width: 20px;
-  height: 20px;  
+  height: 20px;
 }
 .weui-label,.weui-input,.weui-select,.check-info-btn{
   font-size: 15px;
 }
 
-.scrollbar{  
+.scrollbar{
   color: #e0620d;
   white-space: nowrap;
   height: 40px;

@@ -17,7 +17,7 @@ Page({
     contactPhone: '',
     contactType: '',
     credentialsTypeEnum: '01',
-    typeName: '证件号',
+    typeName: '身份证',
     contactCode: '',
     encryptId: '',
     total: 0,
