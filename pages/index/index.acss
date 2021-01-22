@@ -237,3 +237,13 @@ image{
   height: 40px;
   line-height: 40px;
 }
+.footer {
+  margin-top: 20px;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 5px; 
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

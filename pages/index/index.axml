@@ -90,5 +90,5 @@
       </view>
     </view>
   </view>
-  <view class="footer"></view>
+  <view class="footer"><image style="width: 15px; height: 15px; margin-right: 3px; margin-top: -3px;" src="../../assets/banner/favicon.png" />鼎游信息 <text style="color: #666666;margin-left: 3px; ">提供技术支持</text></view>
 </view>
