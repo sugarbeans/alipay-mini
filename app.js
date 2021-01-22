@@ -8,12 +8,12 @@ App({
     visitorType: null,
     priceObj: null,
     id: null,
-    companyId: 7
+    companyId: 9
   },
   onLaunch(options) {
     // 第一次打开
     // options.query == {number:1}
-    console.info('App onLaunch');
+    console.info(options, 'App onLaunch');
   },
   onShow(options) {
     // 从后台被 scheme 重新打开
