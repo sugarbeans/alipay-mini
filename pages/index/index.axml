@@ -64,7 +64,7 @@
     <view class="ticket-main">
       <view class="ticket-box" data-id="{{hotTicketList[0].providerId}}" onTap="toTicket">
         <view class="ticket-image-box">
-          <image class="ticket-image" src="{{hotTicketList[0].pictureUrl}}" binderror="bindErrorImg"  data-errorimg="{{0}}" />
+          <image class="ticket-image" src="../../assets/banner/banner-00.png" binderror="bindErrorImg"  data-errorimg="{{0}}" />
         </view>
         <view class="ticket-text-box">
           <view >{{hotTicketList[0].providerName}}</view>
@@ -90,4 +90,5 @@
       </view>
     </view>
   </view>
+  <view class="footer"></view>
 </view>

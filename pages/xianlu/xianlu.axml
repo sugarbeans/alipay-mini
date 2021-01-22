@@ -1,29 +1,3 @@
 <view class="container">
-  <view class="search-box">
-    <view class="search" onTap="toSearch">
-      <view class="search-text">
-        <text class="iconfont icon-icon-search"></text>
-        <text class="">关键字</text>
-      </view>
-    </view>
-  </view>
-  <view class="product-box">
-    <view class="product-info">
-      <image class="product-image" src="../../assets/banner/002.png"/>
-      <view class="product">
-        <view class="product-title">稻城亚丁旅游线路</view>
-        <view class="product-introduce">稻城亚丁距离南苑机场14公里，位于故宫天 安门2公里</view>
-        <view class="product-price">
-          <text>￥</text>
-          <text>128</text>
-          <text>起</text>
-        </view>
-        <view class="product-theme">
-          <text>实惠</text>
-          <text>便宜</text>
-          <text>风景优美</text>
-        </view>
-      </view>
-    </view>
-  </view>
+  敬请期待！
 </view>

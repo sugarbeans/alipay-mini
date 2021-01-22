@@ -1,29 +1,3 @@
 <view class="container">
-  <view class="search-box">
-    <view class="search">
-      <view class="search-text">
-        <text class="iconfont icon-icon-search"></text>
-        <text class="">目的地/景点/关键字</text>
-      </view>
-    </view>
-  </view>
-  <view class="product-box">
-    <view class="product-info">
-      <image class="product-image" src="../../assets/banner/banner-02.png"/>
-      <view class="product">
-        <view class="product-title">十四冬场馆</view>
-        <view class="product-introduce">扎兰屯市金龙山滑雪场“十四冬”U型场地滑雪队公寓初步设计占地面积3800平方米，共四层，集训练、餐饮、住宿功能于一体，2017年8月上旬正式开工建设，标志着备战“十四冬”工作全面进入快车道。这一项目建成后，赛季可提供专业化服务，非赛季可供休闲、娱乐等服务。</view>
-        <view class="product-price">
-          <text>￥</text>
-          <text>199</text>
-          <text>起</text>
-        </view>
-        <view class="product-theme">
-          <text>实惠</text>
-          <text>便宜</text>
-          <text>休闲</text>
-        </view>
-      </view>
-    </view>
-  </view>
+  敬请期待！
 </view>

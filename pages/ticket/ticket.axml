@@ -23,7 +23,7 @@
     >
       <image
         class="product-img"
-        src="{{item.pictureUrl}}"
+        src="../../assets/banner/banner-02.png"
       ></image>
       <view class="product">
         <view class="product-title">{{item.providerName}}</view>

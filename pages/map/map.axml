@@ -1,5 +1,5 @@
-<view>
-  <map id="map" longitude="113.944659" latitude="22.573527" scale="{{scale}}" controls="{{controls}}"
+<view class="content">
+  <!-- <map id="map" longitude="113.944659" latitude="22.573527" scale="{{scale}}" controls="{{controls}}"
   onControlTap="controltap" markers="{{markers}}"
   onMarkerTap="markertap"
   polyline="{{polyline}}" 
@@ -12,5 +12,6 @@
   include-points="{{includePoints}}"></map>
   <button onTap="changeScale">改scale</button>
   <button onTap="moveToLocation">moveToLocation</button>
-  <button onTap="changeCenter">改center</button>
+  <button onTap="changeCenter">改center</button> -->
+  敬请期待！
 </view>

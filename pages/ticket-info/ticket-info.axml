@@ -4,7 +4,7 @@
 <view class="container">
   <view class="title-img">
     <image
-      src="{{poi.pictureUrl}}"
+      src="../../assets/banner/banner-01.png"
     />
   </view>
   <view class="title-body">
@@ -16,7 +16,7 @@
       a:if="{{index<=activeNum}}"
     >
       <view class="ticket">
-        <view class="ticket-name">{{item.ticketName}} 
+        <view class="ticket-name">{{item.ticketName}}
           <image
             a:if="{{item.productnote && index <2}}"
             class="ticket-sale"
