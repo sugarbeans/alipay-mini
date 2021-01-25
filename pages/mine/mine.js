@@ -56,7 +56,7 @@ Page({
   },
   toContact: function () {
     my.makePhoneCall({
-      phoneNumber: '（86）-（514）-87357803'
+      number: '0836-6966022'
     });
   }
 });
