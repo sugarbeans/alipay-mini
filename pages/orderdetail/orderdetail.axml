@@ -29,7 +29,7 @@
     <view class="order-detail" a:for="{{item.detaillist}}" a:for-item="i">
       <view class="order-detail-s">
         <view class="order-a order-b a">{{i.ticketname}}</view>
-        <view class="order-a order-b a">单价：{{i.price}}</view>
+        <view class="order-a order-b">单价：{{i.price}}</view>
         <view class="order-a order-b a">数量：{{i.num}}</view>
       </view>
       <view class="order-title-box" a:if="{{i.realnamelist.length>0 && i.realnamelist[0].idcard}}">
