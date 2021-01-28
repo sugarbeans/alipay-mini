@@ -190,7 +190,7 @@
   align-items: center;
 }
 .ticket-title{
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 }
 .ticket-rule{
