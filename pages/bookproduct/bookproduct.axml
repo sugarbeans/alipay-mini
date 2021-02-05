@@ -72,7 +72,7 @@
     a:key="index"
   >
     <view class="number-box">
-      <view class="ticket-title">{{item.crowdkindname.length > 17 ? item.crowdkindname.substring(10, 17) : item.crowdkindname}} [￥{{item.saleprice}}]</view>
+      <view class="ticket-title">{{item.crowdkindname}} [￥{{item.saleprice}}]</view>
       <view class="change-box">
         <view  onTap="minusTicketIndex" data-index="{{index}}">
           <iconfont name="jian-copy1" size="24"></iconfont>
