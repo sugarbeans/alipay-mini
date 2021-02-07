@@ -8,6 +8,11 @@ Page({
     showPayLoading: false,
     loadingText: '授权中...'
   },
+  onUnload(){
+    my.switchTab({
+      url: "/pages/index/index"
+    });
+  },
   //用户授权
   onGetAuthorize: function (res) {
     let that = this;
