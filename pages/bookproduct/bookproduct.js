@@ -82,7 +82,7 @@ Page({
       priceList: productInfo.prices,
       productInfo: productInfo,
       stockList: stockList,
-      newDate: otherDate ? otherDate : dateList[1].date,
+      newDate: otherDate ? otherDate : dateList[0].date,
       ticketId: productInfo.ticketId,
       encryptId: productInfo.providerId
     });

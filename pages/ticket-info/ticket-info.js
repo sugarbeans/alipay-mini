@@ -58,7 +58,7 @@ Page({
         method: 'POST',
         data: {
           "providerId": encryptId,
-          "playtime": util.formatTime(new Date(new Date().setDate(new Date().getDate() + 1)), 0), //查询明天的票
+          "playtime": util.formatTime(new Date(new Date().setDate(new Date().getDate())), 0), //查询今天的票
           "getPro": 0,
           "requestid": 1,
           "usid": getApp().globalData.usid,

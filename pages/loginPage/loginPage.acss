@@ -32,10 +32,23 @@
   line-height: 45px;
   color: #ffffff;
 }
-.btn{
+.but {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+  width: 100%;
+}
+.btn, .but-cancel{
+  border-radius: 5px;
   margin-top: 35px;
   font-size: 18px;
-  width: 70%;
+  width: 40%;
+}
+.but-cancel {
+  color: #666666;
+  border: 1px solid;
+  padding: 8px 0;
 }
 .xcx-image{
   width: 100px;
