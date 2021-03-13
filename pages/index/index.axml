@@ -19,9 +19,10 @@
   </scroll-view>
 </view>
   <swiper style="width:100%; height: 255px;"  autoplay="true" circular="true">
+    <swiper-item><image src="../../assets/banner/banner-00.png"></image></swiper-item>
     <swiper-item><image src="../../assets/banner/banner-01.png"></image></swiper-item>
     <swiper-item><image src="../../assets/banner/banner-02.png"></image></swiper-item>
-    <swiper-item><image src="../../assets/banner/banner-00.png"></image></swiper-item>
+    <swiper-item><image src="../../assets/banner/banner-04.png"></image></swiper-item>
   </swiper>
   <view class="logo">
     <view class="logo-box">

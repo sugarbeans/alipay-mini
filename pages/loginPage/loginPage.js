@@ -59,7 +59,7 @@ Page({
           that.setData({
             showPayLoading: false
           });
-          my.navigateBack({delta: 2});
+          my.navigateBack({delta: 1});
         } else {
           that.setData({
             showPayLoading: false
