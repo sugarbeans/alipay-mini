@@ -19,22 +19,10 @@ Page({
     my.getAuthCode ({
       scopes: 'auth_user',
       success(res) {
-        my.getAuthUserInfo({
-          success: (userInfo) => {
-            getApp().globalData.userInfo = userInfo
-            that.setData({
-              showPayLoading: true
-            });
-          },
-          fail: function (res) {
-            that.setData({
-              showError: true,
-              error: 'error',
-              errorMsg: '您取消了授权'
-            });
-          }
-        })
         if (res.authCode) {
+          that.setData({
+            showPayLoading: true
+          });
           that.toLogin(res.authCode);
         } else {
           that.setData({
@@ -43,7 +31,6 @@ Page({
           });
         }
       }
-
     });
   },
   toLogin: function (e) {
@@ -59,6 +46,18 @@ Page({
           that.setData({
             showPayLoading: false
           });
+          my.getAuthUserInfo({
+            success: (userInfo) => {
+              getApp().globalData.userInfo = userInfo
+            },
+            fail: function (res) {
+              that.setData({
+                showError: true,
+                error: 'error',
+                errorMsg: '您取消了授权'
+              });
+            }
+          })
           my.navigateBack({delta: 1});
         } else {
           that.setData({
