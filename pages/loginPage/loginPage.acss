@@ -46,6 +46,9 @@
   width: 40%;
 }
 .but-cancel {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   color: #666666;
   border: 1px solid;
   padding: 8px 0;
