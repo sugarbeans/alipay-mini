@@ -7,6 +7,14 @@ Page({
   },
   //事件处理函数
   onLoad: function (option) {
+    let userInfo = getApp().globalData.userInfo;
+    if (!userInfo) {
+      //判断是否授权登录
+      my.navigateTo({
+        url: "/pages/loginPage/loginPage"
+      });
+      return;
+    }
   },
   onShow: function () {
     let userInfo = getApp().globalData.userInfo;
@@ -16,12 +24,6 @@ Page({
         nickName: userInfo.nickName,
         isLogin: true
       });
-    }else  {
-      //判断是否授权登录
-      my.navigateTo({
-        url: "/pages/loginPage/loginPage"
-      });
-      return;
     }
   },
   toGetLogin: function () {

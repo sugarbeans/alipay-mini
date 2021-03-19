@@ -81,15 +81,14 @@ Page({
           my.stopPullDownRefresh();
           that.setData({
             isLogin: true,
-            orderList: res.data.data.response,
-            showPayLoading: false
+            orderList: res.data.data.response
           })
         }else {
           my.stopPullDownRefresh();
-          that.setData({
-            showPayLoading: false
-          });
         }
+        that.setData({
+            showPayLoading: false
+        });
       },
       fail: function (res) {
         my.stopPullDownRefresh();
