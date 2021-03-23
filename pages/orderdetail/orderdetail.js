@@ -157,7 +157,7 @@ Page({
                   type: 'fail',
                   content: '支付失败'
                 });
-                wx.navigateBack({
+                my.navigateBack({
                   delta:1,
                 })
               }
