@@ -6,7 +6,8 @@ Page({
     errorMsg: '',
     error: 'error',
     showPayLoading: false,
-    loadingText: '授权中...'
+    loadingText: '授权中...',
+    resourceId: ''
   },
   onUnload() {
     my.switchTab({
@@ -46,6 +47,12 @@ Page({
 
     });
   },
+  onLoad: function (option) {
+    let encryptId = option.encryptId;
+    this.setData({
+      resourceId: encryptId,
+    });
+  },
   toLogin: function (e) {
     let baseUrl = util.baseUrl;
     let that = this;
@@ -59,7 +66,13 @@ Page({
           that.setData({
             showPayLoading: false
           });
-          my.navigateBack({delta: 1});
+          if(that.data.resourceId) {
+            my.navigateTo({
+              url: '/pages/ticket-other/ticket-other?encryptId=' + that.data.resourceId
+            });
+          }else {
+            my.navigateBack({delta: 1});
+          }
         } else {
           that.setData({
             showPayLoading: false

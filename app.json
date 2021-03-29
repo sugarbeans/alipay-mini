@@ -12,7 +12,8 @@
     "pages/changguan/changguan",
     "pages/techan/techan",
     "pages/xianlu/xianlu",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/ticket-other/ticket-other"
   ],
   "window": {
     "defaultTitle": "阿坝旅游"
