@@ -1,0 +1,235 @@
+.container{
+  width: 90%;
+  background-color: #ffffff;
+  color: #325572;
+  margin: 0 auto;
+}
+.scroll-top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #c7c7c7;
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  z-index: 999;
+  background-color: rgb(225, 225, 225, 0.2);
+  color: #325572;
+}
+.user_box{
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(225, 225, 225, 0.8);
+  color: #325572;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #c7c7c7;
+  z-index: 999;
+  
+}
+.user_box>text{
+  font-size: 24px;
+}
+.title-img{
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.title-img>image{
+  width: 100%;
+}
+.title-body{
+  width: 100%;
+  padding: 2%;
+  box-sizing: border-box;
+}
+.now-ticket-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+.now-ticket-l{
+  width: 70%;
+}
+.now-ticket-r{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ticket-item{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #cccccc;
+  padding: 20px 0;
+}
+.ticket{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+.ticket-operat{
+  width: 25%;
+}
+.ticket-name{
+  height: 40px;
+  font-size: 18px;
+  line-height: 40px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  display: inline-block;
+}
+.ticket-sale {
+	width: 20px;
+	height: 20px;
+	vertical-align:middle;
+  margin-left: 10px;
+}
+.sea-info{
+  height: 30px;
+  line-height: 40px;
+  font-size: 16px;
+  color: #325572;
+}
+.ticket-operat{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ticket-price{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ticket-price>text:nth-child(1){
+  font-size: 16px;
+  color: red;
+}
+.ticket-price>text:nth-child(2){
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  margin: 0 5px;
+}
+.ticket-price>text:nth-child(3){
+  font-size: 16px;
+  color: #325572;
+}
+.ticket-btn{
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #0468bc;
+  text-align: center;
+  border-radius: 10px;
+  color: #fff;
+}
+.more-item{
+  text-align: center;
+  color:#325572;
+  padding-top: 20px;
+  background-color: #ffffff;
+}
+.scenic-title{
+  font-size: 18px;
+  padding-left: 10px;
+  font-weight: bold;
+  border-left: 6px solid #35c0ff;
+}
+.introduce-text{
+  padding: 0 2%;
+  margin-top: 20px;
+  box-sizing: border-box;
+  color: #325572;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+.place-box{
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0 2%;
+  box-sizing: border-box;
+}
+.place-box>image{
+  width: 100%;
+  border-radius: 20px
+}
+.distance-box{
+  margin-bottom: 30px;
+}
+.distance{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2%;
+  padding-bottom: 20px;
+  height: 50px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #666666;
+}
+.distance:last-child{
+  border-bottom:0;
+}
+.distance-name{
+  flex: 1;
+}
+.distance-name>text{
+  line-height: 30px;
+}
+.distance-num{
+  width: 30%;
+  height: 100%;
+  text-align: center;
+}
+.now-ticket-name{
+  font-size: 20px;
+  font-weight: bold;
+}
+.now-ticket-introduce{
+  font-size: 16px;
+}
+.change-box{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+}
+.change-box>text{
+  display: inline-block;
+  width: 33.33333%;
+}
+.change-box>text:nth-child(1){
+  height: 30px;
+  border: 1px solid #dcdcdc;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 30px;
+}
+.change-box>text:nth-child(3){
+  height: 30px;
+  border: 1px solid #dcdcdc;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 30px;
+}
+.change-box>text:nth-child(2){
+  text-align: center;
+  line-height: 30px;
+}
+.rule-item{
+  text-align: left;
+}
