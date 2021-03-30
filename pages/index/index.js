@@ -129,7 +129,11 @@ Page({
     this.setData({ isHiddenMsg: true});
     clearInterval(this.data.interval);
   },
-
+  goPageTest() {
+    my.navigateTo({
+      url:'/pages/ticket-other/ticket-other?encryptId='+49,
+    })
+  },
  /** 获取滚动条基本信息 */
   topScroll(){
     var that = this;

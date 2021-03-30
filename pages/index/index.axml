@@ -2,7 +2,7 @@
 <view class="scroll-top" hidden="{{isHiddenMsg}}">
   <scroll-view>
     <view class="msg-icon notice-icon">
-      <image src="../../assets/banner/laba.png"></image>
+      <image src="../../assets/banner/laba.png" onTap="goPageTest"></image>
     </view>
     <!-- <view class="scrollbar" style="transform: translateX(-{{distance}}px)">
       <text style="margin-right:{{space}}px;"></text>
