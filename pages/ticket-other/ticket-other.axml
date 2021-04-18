@@ -2,6 +2,11 @@
   <loading loadingText="{{loadingText}}"></loading>
 </view>
 <view class="container">
+  <view class="logo" catchTap="toHome">
+    <view class="logo-box">
+      <image class="logo-image" src="../../assets/banner/logo-bg.png"></image>
+    </view>
+  </view>
   <view class="title-img">
     <image
       src="../../assets/banner/banner-01.png"

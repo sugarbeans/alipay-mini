@@ -58,7 +58,14 @@ Page({
           that.setData({
             showPayLoading: false
           });
-          my.switchTab({url:'/pages/index/index'})
+          if(that.data.resourceId) {
+            getApp().globalData.encryptId = that.data.resourceId
+            my.navigateTo({
+              url: '/pages/ticket-other/ticket-other'
+            });
+          }else {
+            my.navigateBack({delta: 1});
+          }
         } else {
           that.setData({
             showPayLoading: false

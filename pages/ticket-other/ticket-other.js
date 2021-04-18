@@ -22,13 +22,79 @@ Page({
     loadingText: '数据加载中...'
   },
   onLoad: function (option) {
-    let encryptId = option.encryptId;
+    let encryptId = getApp().globalData.encryptId
     this.setData({
       resourceId: encryptId,
       showLoading: true
     });
-    this.homeDataInit()
+    this.onGetAuthorize()
   },
+    //用户授权
+  onGetAuthorize: function (res) {
+    let that = this;
+    my.getAuthCode ({
+      scopes: 'auth_user',
+      success(res) {
+        my.getAuthUserInfo({
+          success: (userInfo) => {
+            getApp().globalData.userInfo = userInfo
+            that.setData({
+              showPayLoading: true
+            });
+          },
+          fail: function (res) {
+            that.setData({
+              showError: true,
+              error: 'error',
+              errorMsg: '您取消了授权'
+            });
+          }
+        })
+        if (res.authCode) {
+          that.toLogin(res.authCode);
+        } else {
+          that.setData({
+            showError: true,
+            errorMsg: '授权失败！'
+          });
+        }
+      }
+
+    });
+  },
+
+  toLogin: function (e) {
+    let baseUrl = util.baseUrl;
+    let that = this;
+    my.request({
+      url: baseUrl + '/smallprogram/ali/alilogin?code='+e+'&companyId='+getApp().globalData.companyId,
+      method: 'GET',
+      timeout: 300000,
+      success: function (res) {
+        if (res.data.code === '200') {
+          getApp().globalData.usid = res.data.data.usid
+          that.setData({
+            showPayLoading: false
+          });
+          that.homeDataInit()
+        } else {
+          that.setData({
+            showPayLoading: false
+          });
+          my.showToast({
+            type: 'fail',
+            content: res.data.message
+          });
+        }
+      },
+      fail: function (res) {
+        that.setData({
+          showPayLoading: false
+        });
+      }
+    });
+  },
+
   homeDataInit:function(){
     let baseUrl = util.baseUrl
     let that = this
@@ -98,24 +164,30 @@ Page({
       url: "/pages/orderCode/order"
     });
   },
+  toHome: function () {
+    my.switchTab({
+      url:'/pages/index/index'
+    })
+  },
   getProductList: function (encryptId) {
     this.setData({
       showLoading: true
     });
     let baseUrl = util.baseUrl;
     let that = this;
+    let _data = {
+      "providerId": encryptId,
+      "playtime": util.formatTime(new Date(new Date().setDate(new Date().getDate())), 0), //查询今天的票
+      "getPro": 0,
+      "requestid": 1,
+      "usid": getApp().globalData.usid,
+      "version": "1.0",
+      "companyId": getApp().globalData.companyId
+    }
       my.request({
         url: baseUrl + '/smallprogram/order/findTickets',
         method: 'POST',
-        data: {
-          "providerId": encryptId,
-          "playtime": util.formatTime(new Date(new Date().setDate(new Date().getDate())), 0), //查询今天的票
-          "getPro": 0,
-          "requestid": 1,
-          "usid": getApp().globalData.usid,
-          "version": "1.0",
-          "companyId": getApp().globalData.companyId
-        },
+        data: _data,
         success: function (res) {
           if (res.data.code === '200') {
             let _obj = getApp().globalData.pois
@@ -134,6 +206,7 @@ Page({
               url: '/pages/loginPage/loginPage?encryptId='+this.data.resourceId
             });
           } else {
+            my.alert({content: JSON.stringify(_obj)+JSON.stringify(_data)})
             my.navigateTo({
               url: '/pages/ticket/ticket'
             });

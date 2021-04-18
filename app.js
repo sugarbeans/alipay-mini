@@ -8,15 +8,21 @@ App({
     visitorType: null,
     priceObj: null,
     id: null,
-    companyId: 18
+    companyId: 18,
+    encryptId: null
   },
   onLaunch(options) {
     // 第一次打开
     // options.query == {number:1}
-    console.info('App onLaunch');
+    if(options.query && options.query.encryptId) {
+      this.globalData.encryptId = options.query.encryptId
+     }
+    console.info('App onLaunch'+this.globalData.encryptId);
   },
   onShow(options) {
-    // 从后台被 scheme 重新打开
-    // options.query == {number:1}
+    if(options.query && options.query.encryptId) {
+      this.globalData.encryptId = options.query.encryptId
+     }
+    console.info('App onShow'+this.globalData.encryptId);
   },
 });
